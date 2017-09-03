@@ -1,0 +1,24 @@
+package app.usb
+
+import app.atom.DomainContext
+
+trait USBContext extends DomainContext {
+  override val DATA_FILE = "atom/usb.csv"
+  
+  val CATEGORY_EXPENSE = "EXPENSE"
+  val CATEGORY_INCOME = "INCOME"
+  val CATEGORY_TRANSFER = "TRANSFER"
+  val CATEGORY_DEPOSIT = "DEPOSIT"
+  val INPUT_TRANSACTION_DEBIT = "DEBIT"
+  val INPUT_TRANSACTION_CREDIT = "CREDIT"
+  val INCOME_SOURCE = Map("SUCCESSFUL LEARN" -> "SUCCESSFUL LEARN",
+    "SHAKOPEE ISD720" -> "SHAKOPEE ISD720",
+    "AMAZING STUDENTS" -> "AMAZING STUDENTS",
+    "OPTUM SERVICES" -> "OPTUM SERVICES")
+
+  val TRANSFER_DESTINATION = Map("PERSHING" -> "PERSHING",
+    "US FEDERAL CU" -> "US FEDERAL CU",
+    "CAPITAL ONE N.A." -> "CAPITAL ONE N.A.")
+
+  val INPUT_DATE_FORMAT = "MM/dd/yyyy"
+}

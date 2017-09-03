@@ -1,0 +1,8 @@
+spark-submit --class app.Alpha --master yarn-cluster --executor-memory 512M --num-executors 15 --executor-cores 11 atom.jar
+
+    val lines = sc.textFile("atom/firefly.csv")
+    val header = lines.first
+    val records = lines.filter(line => line != header).map(line => line.split(","))
+    
+    ## 
+      

@@ -1,0 +1,56 @@
+package app.firefly
+
+import app.atom.DomainContext
+
+trait FireflyContext extends DomainContext {
+  override val DATA_FILE = "atom/firefly.csv"
+
+  val NUM_OF_HEADER_RECORDS = 4
+  val COLUMN_0 = "Transaction Number"
+  val COLUMN_1 = "Date"
+  val COLUMN_2 = "Description"
+  val COLUMN_3 = "Memo"
+  val COLUMN_4 = "Amount Debit"
+  val COLUMN_5 = "Amount Credit"
+  val COLUMN_6 = "Balance"
+  
+  // Column 2 content
+  val DEBIT_CARD_DEBIT = "DEBIT CARD DEBIT"
+  val DIVIDEND = "DIVIDEND"
+  val ELECTRONIC_DEPOSIT = "ELECTRONIC DEPOSIT"
+  val ELECTRONIC_WITHDRAWAL = "ELECTRONIC WITHDRAWAL"
+  val SHARE_DRAFT = "SHARE DRAFT"
+  val DEBIT_CARD_REVERSAL = "DEBIT CARD REVERSAL"
+  val WITHDRAWAL = "WITHDRAWAL"
+
+  // Column 3 content
+  val US_FEDERAL_CU = "US FEDERAL CU"
+  val CAPITAL_ONE_NA = "CAPITAL ONE N.A"
+  val AFFINITY_PLUS = "AFFINITY PLUS"
+  val COMCAST_ONLINE = "COMCAST ONLINE"
+  val KOHLS_ONLINE = "KOHLS ONLINE"
+  val CAPITAL_ONE_CARD = "CAPITAL ONE CARD"
+  val SAMS_CLUB_MC = "SAMS CLUB MC"
+  val TARGET_CARD = "TARGET CARD"
+  val CTRPT_ENGY = "CTRPT ENGY"
+  val THE_HOME_DEP = "THE HOME DEP"
+  val US_FCU = "US FCU"
+  val CORNERSTONE_MGMTONLINE = "CORNERSTONE MGMTONLINE"
+  val SHAKOPEE_PUBLIC_ONLINE = "SHAKOPEE PUBLIC ONLINE"
+  val SCOTT_COUNTY_ONLINE = "SCOTT COUNTY ONLINE"
+
+  val CATEGORY_GENERAL_EXPENSE = "GENERAL EXPENSE"
+  val CATEGORY_UTILITY = "UTILITY"
+  val CATEGORY_CREDIT_CARD = "CREDIT CARD"
+  val CATEGORY_DEPOSIT = "DEPOSIT"
+  val CATEGORY_HOME = "HOME"
+  val CATEGORY_DIGITAL = "DIGITAL"
+
+  val INPUT_DATE_FORMAT = "MM/dd/yyyy"
+  
+  case class DescriptionFlags(DEBIT_CARD_DEBIT: Boolean, DIVIDEND: Boolean, ELECTRONIC_DEPOSIT:Boolean, ELECTRONIC_WITHDRAWAL: Boolean, 
+      SHARE_DRAFT: Boolean, DEBIT_CARD_REVERSAL: Boolean, WITHDRAWAL: Boolean)
+  case class MemoFlags(US_FEDERAL_CU: Boolean, CAPITAL_ONE_NA: Boolean, AFFINITY_PLUS: Boolean, COMCAST_ONLINE: Boolean, 
+      KOHLS_ONLINE: Boolean, CAPITAL_ONE_CARD: Boolean, SAMS_CLUB_MC: Boolean, TARGET_CARD: Boolean, CTRPT_ENGY: Boolean, 
+      THE_HOME_DEP: Boolean, US_FCU: Boolean, CORNERSTONE_MGMTONLINE: Boolean, SHAKOPEE_PUBLIC_ONLINE: Boolean, SCOTT_COUNTY_ONLINE: Boolean)
+}
